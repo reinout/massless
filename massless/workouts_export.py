@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import xmltodict
 
-WORKOUTS_FILE = pathlib.Path("workouts.txt")
+WORKOUTS_FILE = pathlib.Path("var/workouts.txt")
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 START_YEAR = "2017"  # Before this I only have very limited data.
 # ^^^ Note: string comparison... :-)

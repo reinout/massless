@@ -5,7 +5,7 @@ import pandas as pd
 import xmltodict
 from matplotlib.dates import YearLocator
 
-RINGS_FILE = pathlib.Path("rings.txt")
+RINGS_FILE = pathlib.Path("var/rings.txt")
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 START_YEAR = "2019"
 # ^^^ Note: string comparison... :-) Before 2017 I only have very limited
@@ -46,6 +46,7 @@ def main():
     ]
     rings = pd.DataFrame(rings_cleaned_dictlist)
     rings.index = pd.to_datetime(rings["date"])
+    rings.drop(columns=["date"], inplace=True)
 
     sample_period = "M"
 
