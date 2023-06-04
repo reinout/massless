@@ -1,48 +1,50 @@
-# venv maken met matplotlib erin.
-# Dan dit script aanropen met een hackdiet csv export ernaast.
 import datetime
 import pathlib
-import sys
+from enum import Enum
 
 import matplotlib.pyplot as plt
 import numpy as np
+import typer
 from matplotlib.dates import date2num
 from matplotlib.dates import MonthLocator
 from matplotlib.dates import YearLocator
 
-INPUT = "hackdiet_db.csv"
+INPUT = "var/hackdiet_db.csv"
 EMA_FACTOR = 0.1  # Exponential moving average.
 LENGTH = 1.78
 TODAY = datetime.date.today()
 
-ALL = "all"
-HIGH = "from high point"
-START = "diet start"
+
+class Start(str, Enum):
+    all = "all"
+    high = "high"
+    begin = "begin"
+
 
 # START is the start date of the period
 START_DATE = {
-    ALL: datetime.date(1972, 12, 25),
-    HIGH: datetime.date(2021, 5, 28),
-    START: datetime.date(2022, 11, 1),  # TODO: nakijken
+    Start.all: datetime.date(1972, 12, 25),
+    Start.high: datetime.date(2021, 5, 28),
+    Start.begin: datetime.date(2022, 11, 1),  # TODO: nakijken
 }
 # TARGET is the initial goal: the bottom of the graph.
 TARGET = {
-    ALL: 78.0,
-    HIGH: 93.0,
-    START: 93.0,
+    Start.all: 78.0,
+    Start.high: 93.0,
+    Start.begin: 93.0,
 }
 # MAX is the top of the graph.
 # Max value is 112.3 on 2021-05-28
 MAX = {
-    ALL: 113.0,
-    HIGH: 113.0,
-    START: 108.0,
+    Start.all: 113.0,
+    Start.high: 113.0,
+    Start.begin: 108.0,
 }
 # Starting value for the exponential moving average.
 FIRST_EMA = {
-    ALL: 97.5,
-    HIGH: 112.3,
-    START: 107.5,
+    Start.all: 97.5,
+    Start.high: 112.3,
+    Start.begin: 107.5,
 }
 
 
@@ -85,8 +87,16 @@ def mass_to_bmi(mass):
     return mass / (LENGTH**2)
 
 
-def main(period):
-    previous_ema = FIRST_EMA[period]
+def main(period: Start = Start.begin):
+    """Generate graph from a hacker's diet csv export.
+
+    As the period you can pass:
+    - 'all' for the whole hog since 2007.
+    - 'high' starts at the high point of 112.3kg.
+    - 'begin' for the start of the current diet in november 2022.
+
+    """
+    previous_ema = FIRST_EMA[period.value]
 
     dates = []
     values = []
@@ -129,9 +139,9 @@ def main(period):
     ax1.set_ylabel("Gewicht (kg)")
     ax2.set_ylabel("BMI")
     ax1.grid(True)
-    if period == ALL:
+    if period == Start.all:
         ax1.xaxis.set_major_locator(YearLocator())
-    if period == START:
+    if period == Start.begin:
         ax1.xaxis.set_major_locator(MonthLocator())
 
     # From https://matplotlib.org/stable/gallery/ticks/centered_ticklabels.html :
@@ -142,9 +152,4 @@ def main(period):
 
 
 if __name__ == "__main__":
-    if "all" in sys.argv:
-        main(period=ALL)
-    elif "start" in sys.argv:
-        main(period=START)
-    else:
-        main(period=HIGH)
+    typer.run(main)

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import xmltodict
 
-ALCOHOL_FILE = pathlib.Path("alcohol.txt")
+ALCOHOL_FILE = pathlib.Path("var/alcohol.txt")
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 ROLLING_PERIOD = 21
 
