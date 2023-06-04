@@ -53,25 +53,3 @@ If you need a new dependency (like `requests`), add it in
 `pyproject.toml` in `dependencies`. And update your local install with:
 
     $ bin/pip install -e .[test]
-
-
-## Steps to do after generating with cookiecutter
-
-- Add a new project on <https://github.com/nens/> with the same name.  Think
-  about the visibility to ("public" / "private") and do not generate a
-  license or readme.
-
-  Note: "public" means "don't put customer data or sample data with real
-  persons' addresses on github"!
-
-- Follow the steps you then see (from "git init" to "git push origin main")
-  and your code will be online.
-
-- Go to
-  https://github.com/nens/>massless/settings/collaboration
-  and add the teams with write access (you might have to ask someone with
-  admin rights (like Reinout) to do it).
-
-- Update this readme.
-
-- Remove this section as you've done it all :-)
