@@ -2,7 +2,7 @@
 name = "massless"
 description = "Reinout's scripts for lowering his mass and making nice graphs"
 authors = [
-    {name = "Nelen & Schuurmans", email = "info@nelen-schuurmans.nl"},
+    {name = "Reinout van Rees", email = "reinout@vanrees.org"},
 ]
 readme = "README.md"
 license = {text = "MIT"}
