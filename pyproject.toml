@@ -21,8 +21,11 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 test = [
+    "data-science-types",
     "pytest",
-    "pytest-cov"
+    "pytest-cov",
+    "pytest-mypy",
+    "types-xmltodict"
 ]
 
 [project.urls]

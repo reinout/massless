@@ -96,7 +96,7 @@ def main(period: Start = Start.begin):
     - 'begin' for the start of the current diet in november 2022.
 
     """
-    previous_ema = FIRST_EMA[period.value]
+    previous_ema = FIRST_EMA[period]
 
     dates = []
     values = []
