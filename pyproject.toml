@@ -53,3 +53,7 @@ force_single_line = true
 norecursedirs=".venv data doc etc *.egg-info misc var build lib include"
 python_files = "test_*.py"
 testpaths = "massless"
+
+[tool.zest-releaser]
+release = false
+python-file-with-version = "massless/__init__.py"
