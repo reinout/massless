@@ -5,9 +5,9 @@ from enum import Enum
 import matplotlib.pyplot as plt
 import numpy as np
 import typer
-from matplotlib.dates import date2num
-from matplotlib.dates import MonthLocator
-from matplotlib.dates import YearLocator
+from matplotlib.dates import date2num  # type: ignore
+from matplotlib.dates import MonthLocator  # type: ignore
+from matplotlib.dates import YearLocator  # type: ignore
 
 INPUT = "var/hackdiet_db.csv"
 EMA_FACTOR = 0.1  # Exponential moving average.
@@ -113,7 +113,7 @@ def main(period: Start = Start.begin):
 
     # Set up the axis
     fig, ax1 = plt.subplots()
-    ax2 = ax1.twinx()
+    ax2: plt.Axes = ax1.twinx()  # type: ignore
     minimum = TARGET[period]
     maximum = MAX[period]
     ax1.set_ylim(minimum, maximum)

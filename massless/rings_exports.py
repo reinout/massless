@@ -3,7 +3,7 @@ import pathlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import xmltodict
-from matplotlib.dates import YearLocator
+from matplotlib.dates import YearLocator  # type: ignore
 
 RINGS_FILE = pathlib.Path("var/rings.txt")
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S %z"
