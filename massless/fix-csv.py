@@ -31,7 +31,7 @@ START_DATE = {
 TARGET = {
     Start.all: 78.0,
     Start.high: 93.0,
-    Start.begin: 93.0,
+    Start.begin: 88.0,
 }
 # MAX is the top of the graph.
 # Max value is 112.3 on 2021-05-28
