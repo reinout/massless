@@ -9,18 +9,12 @@
 *.egg-info
 sdist
 pip-log.txt
-bower_components/
 node_modules/
 .DS_Store
 doc/build/
 ansible/*.retry
-.venv
-bin/
-lib/
-pyvenv.cfg
-dist/
+venv
 var/
-share/
 
 # Unit test / coverage reports
 .coverage
