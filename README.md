@@ -27,18 +27,18 @@ this is a dirty hack.
 ## Development installation of this project itself
 
 We use python's build-in "virtualenv" to get a nice isolated
-directory. You only need to run this once:
+directory, all handily managed in a `Makefile`. To install:
 
-    $ python3 -m venv .
+    $ make
 
-A virtualenv puts its commands in the `bin` directory. So `bin/pip`,
-`bin/pytest`, etc. Set up the dependencies like this:
+If you do it manuallY:
 
-    $ bin/pip install -e .[test]
+    $ python3 -m venv venv
+    $ venv/bin/pip install -e .[test]
 
 There will be a script you can run like this:
 
-    $ bin/run-massless
+    $ venv/bin/run-massless
 
 It runs the `main()` function in `[massless/scripts.py`,
 adjust that if necessary. The script is configured in
@@ -52,7 +52,7 @@ it on this project:
 
 Run the tests regularly with coverage:
 
-    $ bin/pytest --cov
+    $ make test
 
 The tests are also run automatically [on "github
 actions"](https://github.com/nens/massless/actions) for
@@ -63,4 +63,4 @@ the feedback from the automated tests.
 If you need a new dependency (like `requests`), add it in
 `pyproject.toml` in `dependencies`. And update your local install with:
 
-    $ bin/pip install -e .[test]
+    $ make install
