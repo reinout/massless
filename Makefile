@@ -1,4 +1,20 @@
-all: var source_files extracted_files
+all: install import
+
+install: venv/bin/run-massless
+
+import: var source_files extracted_files
+
+test:
+	venv/bin/pytest --cov
+
+
+venv/bin/run-massless: venv/bin/python pyproject.toml
+	venv/bin/pip install -e .[test]
+
+venv/bin/python:
+	python3 -m venv venv
+
+
 
 var:
 	mkdir -p var
