@@ -18,13 +18,18 @@ def alcohol_as_xml():
     return result
 
 
-def _value_to_glasses(value):
+def _value_to_glasses(value: float) -> float:
     """Return 'alcohol unit' value as number of Dutch glasses.
 
     1 AU is defined as 10ml pure alcohol in the UK (where the app comes from).
     In NL it is 12.7ml.
     """
     return float(value) / 1.27
+
+
+def dutch_glass_to_kcal(glasses: float) -> float:
+    # 1 glass is 12.7ml, so 12.7mg. 1mg alcohol is 7 kcal.
+    return glasses * 12.7 * 7
 
 
 def main(grouping="month"):
@@ -48,12 +53,18 @@ def main(grouping="month"):
     x = list(alcohol_per_day.index)
     y = list(alcohol_per_day["glasses"])
     y2 = list(alcohol_per_day["gemiddelde"])
-    fig, ax = plt.subplots()
-    ax.plot(x, y, "+", color="orange")
-    ax.plot(x, y2, linestyle="solid", color="blue", label="gemiddelde")
+    fig, ax1 = plt.subplots()
+    ax2: plt.Axes = ax1.twinx()  # type: ignore
+    minimum = 0
+    maximum = max(y)
+    ax1.set_ylim(minimum, maximum)
+    ax2.set_ylim(dutch_glass_to_kcal(minimum), dutch_glass_to_kcal(maximum))
+    ax1.plot(x, y, "+", color="orange")
+    ax1.plot(x, y2, linestyle="solid", color="blue", label="gemiddelde")
 
-    ax.set_ylabel("Glazen/dag")
-    ax.grid(True)
+    ax1.set_ylabel("Glazen/dag")
+    ax2.set_ylabel("kcal/dag")
+    ax1.grid(True)
 
     # total_mean = alcohol_per_day["glasses"].mean()
     # ax.axhline(total_mean)
