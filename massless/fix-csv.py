@@ -29,8 +29,8 @@ START_DATE = {
 }
 # TARGET is the initial goal: the bottom of the graph.
 TARGET = {
-    Start.all: 78.0,
-    Start.high: 93.0,
+    Start.all: 88.0,
+    Start.high: 92.0,
     Start.begin: 88.0,
 }
 # MAX is the top of the graph.
