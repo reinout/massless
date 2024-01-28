@@ -31,8 +31,6 @@ def _walking_time(row):
     if row["type"] == "HKWorkoutActivityTypeWalking":
         return row["duration"] / 60
 
-    # Voorbeeld rianne
-
 
 def main():
     rings_data = xmltodict.parse(rings_as_xml())
