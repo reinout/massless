@@ -1,8 +1,15 @@
 # -*- coding: utf-8 -*-
 """Tests for script.py"""
 import sys
+import pytest
 
 from massless import scripts
+
+
+@pytest.fixture
+def dummy_fixture():
+    # To allow pytest to be in the test dependencies.
+    pass
 
 
 def test_get_parser(monkeypatch):
