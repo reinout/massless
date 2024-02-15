@@ -5,3 +5,7 @@ is_python_project = true
 meta_version = "0.1.dev0" # Set by nens-meta
 project_name = "massless" # Suggested by nens-meta
 package_name = "massless" # Suggested by nens-meta
+
+
+[tox]
+minimum_coverage = "1"
