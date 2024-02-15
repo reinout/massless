@@ -23,8 +23,6 @@ dynamic = ["version"] # Set by nens-meta
 test = [
     "data-science-types",
     "pytest",
-    "pytest-cov",
-    "pytest-mypy",
     "types-xmltodict"
 ]
 
@@ -47,6 +45,9 @@ testpaths = ["massless"]
 [tool.zest-releaser]
 release = false
 python-file-with-version = "massless/__init__.py"
+
+[tool.dependencychecker]
+ignore-packages = ["data-science-types", "types-xmltodict"]
 
 [tool.coverage.run] # Whole section managed by nens-meta
 source = ["massless"]
