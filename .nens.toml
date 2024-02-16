@@ -6,6 +6,8 @@ meta_version = "0.1.dev0" # Set by nens-meta
 project_name = "massless" # Suggested by nens-meta
 package_name = "massless" # Suggested by nens-meta
 
-
 [tox]
 minimum_coverage = "1"
+
+[pyprojecttoml]
+minimum_python_version = "3.11"
