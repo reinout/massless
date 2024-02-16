@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
 """Tests for script.py"""
 import sys
+
 import pytest
 
 from massless import scripts
