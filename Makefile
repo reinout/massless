@@ -1,18 +1,17 @@
 all: install import
 
-install: venv/bin/run-massless
+install: .venv/bin/run-massless
 
 import: var source_files extracted_files
 
 test:
-	venv/bin/pytest --cov
+	tox -q
 
+.venv/bin/run-massless: .venv/bin/python pyproject.toml
+	uv pip install -r requirements.txt
 
-venv/bin/run-massless: venv/bin/python pyproject.toml
-	venv/bin/pip install -e .[test]
-
-venv/bin/python:
-	python3 -m venv venv
+.venv/bin/python:
+	uv venv
 
 
 
