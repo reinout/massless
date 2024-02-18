@@ -1,3 +1,6 @@
+[build-system]
+requires = ["setuptools>=69"] # Suggested by nens-meta
+
 [project]
 name = "massless" # Set by nens-meta
 description = "Reinout's scripts for lowering his mass and making nice graphs"
@@ -17,7 +20,7 @@ dependencies = [
     "typer[all]",
     "xmltodict",
 ]
-dynamic = ["version"] # Set by nens-meta
+dynamic = ["version"]
 
 [project.optional-dependencies]
 test = [
@@ -32,15 +35,16 @@ homepage = "https://github.com/nens/massless"
 [project.scripts]
 run-massless = "massless.scripts:main"
 
-[tool.setuptools] # Whole section managed by nens-meta
-packages = ["massless"]
+[tool.setuptools]
+packages = ["massless"] # Set by nens-meta
 zip-safe = false
 
-[tool.setuptools.dynamic] # Whole section managed by nens-meta
+[tool.setuptools.dynamic]
 version = {attr = "massless.__version__"}
-[tool.pytest.ini_options] # Whole section managed by nens-meta
+
+[tool.pytest.ini_options]
 log_level = "DEBUG"
-testpaths = ["massless"]
+testpaths = ["massless"] # Set by nens-meta
 
 [tool.zest-releaser]
 release = false
@@ -49,15 +53,15 @@ python-file-with-version = "massless/__init__.py"
 [tool.dependencychecker]
 ignore-packages = ["data-science-types", "types-xmltodict"]
 
-[tool.coverage.run] # Whole section managed by nens-meta
-source = ["massless"]
+[tool.coverage.run]
+source = ["massless"] # Set by nens-meta
 
-[tool.coverage.report] # Whole section managed by nens-meta
+[tool.coverage.report] # show_missing and skip_empty set by nens-meta
 show_missing = true
 skip_empty = true
 
 [tool.ruff] # Required: target-version
-target-version = "py311" # Set by nens-meta from minimum_python_version
+target-version = "py311"
 
 [tool.ruff.lint] # Required: select
 select = ["E4", "E7", "E9", "F", "I", "UP", "C901"]
@@ -66,6 +70,3 @@ select = ["E4", "E7", "E9", "F", "I", "UP", "C901"]
 include = ["massless"] # Set by nens-meta
 venvPath = "." # Set by nens-meta
 venv = ".venv" # Set by nens-meta
-
-[build-system] # Whole section managed by nens-meta
-requires = ["setuptools>=69"]
