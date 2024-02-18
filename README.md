@@ -26,6 +26,8 @@ this is a dirty hack.
 
 ## Development installation of this project itself
 
+See https://nens-meta.readthedocs.io , though that conflicts a bit with our makefile :-)
+
 We use python's build-in "virtualenv" to get a nice isolated
 directory, all handily managed in a `Makefile`. To install:
 
