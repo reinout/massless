@@ -59,7 +59,7 @@ def main(grouping="month"):
     maximum = max(y)
     ax1.set_ylim(minimum, maximum)
     ax2.set_ylim(dutch_glass_to_kcal(minimum), dutch_glass_to_kcal(maximum))
-    ax1.plot(x, y, linestyle="+", color="orange")
+    ax1.plot(x, y, "+", color="orange")
     ax1.plot(x, y2, linestyle="solid", color="blue", label="gemiddelde")
 
     ax1.set_ylabel("Glazen/dag")
