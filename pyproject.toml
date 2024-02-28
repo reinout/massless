@@ -1,8 +1,8 @@
 [build-system]
-requires = ["setuptools>=69"] # Suggested by nens-meta
+requires = ["setuptools>=69"]
 
 [project]
-name = "massless" # Set by nens-meta
+name = "massless"
 description = "Reinout's scripts for lowering his mass and making nice graphs"
 authors = [
     {name = "Reinout van Rees", email = "reinout@vanrees.org"},
@@ -12,7 +12,7 @@ license = {text = "MIT"}
 # Get classifier strings from http://www.python.org/pypi?%3Aaction=list_classifiers
 classifiers = ["Programming Language :: Python"]
 keywords = []
-requires-python = ">=3.7"
+requires-python = ">=3.12"
 dependencies = [
     "matplotlib",
     "numpy",
@@ -36,15 +36,14 @@ homepage = "https://github.com/nens/massless"
 run-massless = "massless.scripts:main"
 
 [tool.setuptools]
-packages = ["massless"] # Set by nens-meta
-zip-safe = false
+packages = ["massless"]
 
 [tool.setuptools.dynamic]
 version = {attr = "massless.__version__"}
 
 [tool.pytest.ini_options]
 log_level = "DEBUG"
-testpaths = ["massless"] # Set by nens-meta
+testpaths = ["massless"]
 
 [tool.zest-releaser]
 release = false
@@ -54,19 +53,19 @@ python-file-with-version = "massless/__init__.py"
 ignore-packages = ["data-science-types", "types-xmltodict"]
 
 [tool.coverage.run]
-source = ["massless"] # Set by nens-meta
+source = ["massless"]
 
-[tool.coverage.report] # show_missing and skip_empty set by nens-meta
+[tool.coverage.report]
 show_missing = true
 skip_empty = true
 
-[tool.ruff] # Required: target-version
-target-version = "py311"
+[tool.ruff]
+target-version = "py312"
 
-[tool.ruff.lint] # Required: select
+[tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I", "UP", "C901"]
 
 [tool.pyright]
-include = ["massless"] # Set by nens-meta
-venvPath = "." # Set by nens-meta
-venv = ".venv" # Set by nens-meta
+include = ["massless"]
+venvPath = "."
+venv = ".venv"
