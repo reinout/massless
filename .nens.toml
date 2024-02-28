@@ -9,3 +9,8 @@ uses_ansible = false
 
 [tox]
 minimum_coverage = "1"
+default_environments = ['lint', 'py312', 'coverage']
+
+[meta_workflow]
+main_python_version = '3.12'
+python_versions = ['3.12']
