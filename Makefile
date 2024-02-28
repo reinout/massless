@@ -1,19 +1,4 @@
-all: install import
-
-install: .venv/bin/run-massless
-
-import: var source_files extracted_files
-
-test:
-	tox -q
-
-.venv/bin/run-massless: .venv/bin/python pyproject.toml
-	uv pip install -r requirements.txt
-
-.venv/bin/python:
-	uv venv
-
-
+all: var source_files extracted_files
 
 var:
 	mkdir -p var
