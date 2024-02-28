@@ -2,9 +2,10 @@
 
 [meta]
 is_python_project = true
-meta_version = "0.4.dev0" # Set by nens-meta
+meta_version = "0.5.dev0" # Set by nens-meta
 project_name = "massless" # Suggested by nens-meta
 package_name = "massless" # Suggested by nens-meta
+uses_ansible = false
 
 [tox]
 minimum_coverage = "1"
