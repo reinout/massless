@@ -1,4 +1,5 @@
 """Tests for script.py"""
+
 import sys
 
 import pytest
