@@ -1,5 +1,0 @@
-{"include": ["massless"],
- "exclude": ["venv"],
- "venvPath": ".",
- "venv": "venv"
-}

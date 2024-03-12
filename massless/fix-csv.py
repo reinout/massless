@@ -5,9 +5,11 @@ from enum import Enum
 import matplotlib.pyplot as plt
 import numpy as np
 import typer
-from matplotlib.dates import date2num  # type: ignore
-from matplotlib.dates import MonthLocator  # type: ignore
-from matplotlib.dates import YearLocator  # type: ignore
+from matplotlib.dates import (
+    MonthLocator,  # type: ignore
+    YearLocator,  # type: ignore
+    date2num,  # type: ignore
+)
 
 INPUT = "var/hackdiet_db.csv"
 EMA_FACTOR = 0.1  # Exponential moving average.
@@ -30,7 +32,7 @@ START_DATE = {
 # TARGET is the initial goal: the bottom of the graph.
 TARGET = {
     Start.all: 88.0,
-    Start.high: 92.0,
+    Start.high: 88.0,
     Start.begin: 88.0,
 }
 # MAX is the top of the graph.
