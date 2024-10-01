@@ -26,43 +26,16 @@ this is a dirty hack.
 
 ## Development installation of this project itself
 
-See https://nens-meta.readthedocs.io , though that conflicts a bit with our makefile :-)
+We use "uv" for a local dev install:
 
-We use python's build-in "virtualenv" to get a nice isolated
-directory, all handily managed in a `Makefile`. To install:
+    $ uv sync --dev
 
-    $ make
+Run the scripts in massless/ like this:
 
-If you do it manuallY:
-
-    $ python3 -m venv venv
-    $ venv/bin/pip install -e .[test]
-
-There will be a script you can run like this:
-
-    $ venv/bin/run-massless
-
-It runs the `main()` function in `[massless/scripts.py`,
-adjust that if necessary. The script is configured in
-`TODO, MISSING NOW` (see `entry_points`).
+    $ uv run massless/fix-csv.py
 
 In order to get nicely formatted python files without having to spend
 manual work on it, get [pre-commit](https://pre-commit.com/) and install
 it on this project:
 
     $ pre-commit install
-
-Run the tests regularly with coverage:
-
-    $ make test
-
-The tests are also run automatically [on "github
-actions"](https://github.com/nens/massless/actions) for
-"main" and for pull requests. So don't just make a branch, but turn it into a
-pull request right away. On your pull request page, you also automatically get
-the feedback from the automated tests.
-
-If you need a new dependency (like `requests`), add it in
-`pyproject.toml` in `dependencies`. And update your local install with:
-
-    $ make install
