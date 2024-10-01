@@ -175,8 +175,8 @@ dependencies = [
     { name = "xmltodict" },
 ]
 
-[package.optional-dependencies]
-test = [
+[package.dev-dependencies]
+dev = [
     { name = "data-science-types" },
     { name = "pytest" },
     { name = "types-xmltodict" },
@@ -184,14 +184,18 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "data-science-types", marker = "extra == 'test'" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
-    { name = "pytest", marker = "extra == 'test'" },
-    { name = "typer", extras = ["all"] },
-    { name = "types-xmltodict", marker = "extra == 'test'" },
+    { name = "typer" },
     { name = "xmltodict" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "data-science-types" },
+    { name = "pytest" },
+    { name = "types-xmltodict" },
 ]
 
 [[package]]

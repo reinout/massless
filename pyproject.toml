@@ -17,16 +17,16 @@ dependencies = [
     "matplotlib",
     "numpy",
     "pandas",
-    "typer[all]",
+    "typer",
     "xmltodict",
 ]
 dynamic = ["version"]
 
-[project.optional-dependencies]
-test = [
+[tool.uv]
+dev-dependencies = [
     "data-science-types",
     "pytest",
-    "types-xmltodict"
+    "types-xmltodict",
 ]
 
 [project.urls]
