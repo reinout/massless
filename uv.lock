@@ -372,11 +372,11 @@ wheels = [
 
 [[package]]
 name = "pyparsing"
-version = "3.1.4"
+version = "3.2.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/83/08/13f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043a/pyparsing-3.1.4.tar.gz", hash = "sha256:f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032", size = 900231 }
+sdist = { url = "https://files.pythonhosted.org/packages/8c/d5/e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2/pyparsing-3.2.0.tar.gz", hash = "sha256:cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c", size = 920984 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl", hash = "sha256:a6a7ee4235a3f944aa1fa2249307708f893fe5717dc603503c6c7969c070fb7c", size = 104100 },
+    { url = "https://files.pythonhosted.org/packages/be/ec/2eb3cd785efd67806c46c13a17339708ddc346cbb684eade7a6e6f79536a/pyparsing-3.2.0-py3-none-any.whl", hash = "sha256:93d9577b88da0bbea8cc8334ee8b918ed014968fd2ec383e868fb8afb1ccef84", size = 106921 },
 ]
 
 [[package]]
@@ -463,11 +463,11 @@ wheels = [
 
 [[package]]
 name = "types-xmltodict"
-version = "0.13.0.3"
+version = "0.14.0.20241009"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/4f/bc/191d95f4e18ee8ffe626046574805fad7734827146e6ad39d56149fb1f62/types-xmltodict-0.13.0.3.tar.gz", hash = "sha256:8884534bab0364c4b22d5973f3c8153ff40d413a801d9e70eb893e676909f1fc", size = 2689 }
+sdist = { url = "https://files.pythonhosted.org/packages/05/28/f1c86d869d74342553c74bd88d6f615427b544fd06f30fdaa68cb4369cd1/types-xmltodict-0.14.0.20241009.tar.gz", hash = "sha256:9224c2422c5b6359cf826685b4ee50b14dc2cb9134561ab793ef6b03dd7108e1", size = 3224 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/31/8046c84acfc397e60afe39ac5cdaf1ba5cf95eef11a1e995c3e951f08ba5/types_xmltodict-0.13.0.3-py3-none-any.whl", hash = "sha256:cb251c59e838986d8402b10d804225ade9fd6c9f66d01dc45cd6cfdf43640128", size = 2503 },
+    { url = "https://files.pythonhosted.org/packages/15/5e/6d81048a06f956ccec74c61fe5c30784e6a865876dc4ab02e99099e4ee0c/types_xmltodict-0.14.0.20241009-py3-none-any.whl", hash = "sha256:92812e17ffa9171416b35806cb5f4ed3f8f52b6724b2c555e4733e902ef4afd0", size = 2859 },
 ]
 
 [[package]]
@@ -490,9 +490,9 @@ wheels = [
 
 [[package]]
 name = "xmltodict"
-version = "0.13.0"
+version = "0.14.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/39/0d/40df5be1e684bbaecdb9d1e0e40d5d482465de6b00cbb92b84ee5d243c7f/xmltodict-0.13.0.tar.gz", hash = "sha256:341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56", size = 33813 }
+sdist = { url = "https://files.pythonhosted.org/packages/98/f7/d29b8cdc9d8d075673be0f800013c1161e2fd4234546a140855a1bcc9eb4/xmltodict-0.14.1.tar.gz", hash = "sha256:338c8431e4fc554517651972d62f06958718f6262b04316917008e8fd677a6b0", size = 51919 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/94/db/fd0326e331726f07ff7f40675cd86aa804bfd2e5016c727fa761c934990e/xmltodict-0.13.0-py2.py3-none-any.whl", hash = "sha256:aa89e8fd76320154a40d19a0df04a4695fb9dc5ba977cbb68ab3e4eb225e7852", size = 9971 },
+    { url = "https://files.pythonhosted.org/packages/83/33/ce3c404fece93880135ab9a07414d57f642e9340717130362bcd4ecee3c1/xmltodict-0.14.1-py2.py3-none-any.whl", hash = "sha256:3ef4a7b71c08f19047fcbea572e1d7f4207ab269da1565b5d40e9823d3894e63", size = 9982 },
 ]
