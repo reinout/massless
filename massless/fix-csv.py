@@ -144,7 +144,7 @@ def main(period: Start = Start.begin):
     if period == Start.all:
         ax1.xaxis.set_major_locator(YearLocator())
     if period == Start.begin:
-        ax1.xaxis.set_major_locator(MonthLocator())
+        ax1.xaxis.set_major_locator(MonthLocator(interval=2))
 
     # From https://matplotlib.org/stable/gallery/ticks/centered_ticklabels.html :
     for label in ax1.get_xticklabels():
