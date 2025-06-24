@@ -44,3 +44,9 @@ docker-compose.override.yml
 ### Extra lines below are preserved ###
 dependencies.md
 dependencies.png
+.web
+__pycache__/
+*.py[cod]
+.states
+*.db
+assets/external/

@@ -17,6 +17,7 @@ dependencies = [
     "matplotlib",
     "numpy",
     "pandas",
+    "reflex>=0.7.14",
     "typer",
     "xmltodict",
 ]
