@@ -1,9 +1,12 @@
 import datetime
 import pathlib
 from enum import Enum
+from typing import Generator
 
+import reflex as rx
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import typer
 from matplotlib.dates import (
     MonthLocator,  # type: ignore
@@ -17,7 +20,7 @@ LENGTH = 1.78
 TODAY = datetime.date.today()
 
 
-class Start(str, Enum):
+class Start(Enum):
     all = "all"
     high = "high"
     begin = "begin"
@@ -58,7 +61,7 @@ RESTART_IN_2019 = datetime.date(2019, 3, 1)
 RESTART_IN_2019_EMA = 106.0
 
 
-def dates_and_values(period):
+def dates_and_values(period) -> Generator[tuple[datetime.datetime, float], None, None]:
     input_file = pathlib.Path(INPUT)
     content = input_file.read_text()
     lines = content.split("\n")
@@ -151,6 +154,52 @@ def main(period: Start = Start.begin):
         label.set_horizontalalignment("left")
 
     plt.show()
+
+
+class HackdietState(rx.State):
+    period: str = Start.high.name
+
+    @rx.var
+    def data(self) -> list[dict]:
+        period = Start[self.period]
+        return [
+            {"date": date, "mass": value}
+            for date, value in dates_and_values(period)]
+
+    @rx.event
+    def change_period(self, name: str):
+        assert name in Start
+        self.period = name
+
+
+def weight_graph() -> rx.Component:
+    return rx.recharts.line_chart(
+        rx.recharts.line(
+            data_key="mass",
+            dot=False,
+        ),
+        rx.recharts.x_axis(data_key="date"),
+        rx.recharts.y_axis(domain=[88.0, 115.0], name="Massa"),
+        data=HackdietState.data,
+        width="100%",
+        height=300,
+    )
+
+
+def hackdiet() -> rx.Component:
+    # Page with the hacker diet graph
+    return rx.container(
+        rx.vstack(
+            rx.heading("Reinout's massa"),
+            rx.select(
+                # Start,
+                Start._member_names_,
+                value=HackdietState.period,
+                on_change=HackdietState.change_period,
+            ),
+            weight_graph(),
+        )
+    )
 
 
 if __name__ == "__main__":

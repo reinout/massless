@@ -1,8 +1,8 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-
 import reflex as rx
 
 from rxconfig import config
+
+from massless import hackdiet
 
 
 class State(rx.State):
@@ -35,3 +35,4 @@ def index() -> rx.Component:
 
 app = rx.App()
 app.add_page(index)
+app.add_page(hackdiet.hackdiet)
