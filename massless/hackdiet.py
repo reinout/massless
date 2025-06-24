@@ -182,7 +182,7 @@ def weight_graph() -> rx.Component:
         rx.recharts.y_axis(domain=[88.0, 115.0], name="Massa"),
         data=HackdietState.data,
         width="100%",
-        height=300,
+        height=600,
     )
 
 
