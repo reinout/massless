@@ -44,3 +44,5 @@ docker-compose.override.yml
 ### Extra lines below are preserved ###
 dependencies.md
 dependencies.png
+.web
+.states
