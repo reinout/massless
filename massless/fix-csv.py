@@ -1,6 +1,6 @@
 import datetime
 import pathlib
-from enum import Enum
+from enum import StrEnum
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,7 +17,7 @@ LENGTH = 1.78
 TODAY = datetime.date.today()
 
 
-class Start(str, Enum):
+class Start(StrEnum):
     all = "all"
     high = "high"
     begin = "begin"
