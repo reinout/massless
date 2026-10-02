@@ -53,7 +53,7 @@ def main(grouping="month"):
     if grouping == "kwartaal":
         sample_period = "Q"
     else:
-        sample_period = "M"
+        sample_period = "ME"
 
     workouts_per_grouping = workouts_per_day.resample(sample_period).mean()
     ax = workouts_per_grouping.plot(

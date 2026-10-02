@@ -48,7 +48,7 @@ def main():
     rings.index = pd.to_datetime(rings["date"])
     rings.drop(columns=["date"], inplace=True)
 
-    sample_period = "M"
+    sample_period = "ME"
 
     rings_per_month = rings.resample(sample_period).mean()
     # rings_per_month["energy_use_rolling"] = rings_per_month["energy_use"].rolling(4).mean()
